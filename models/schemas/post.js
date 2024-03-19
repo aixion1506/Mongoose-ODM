@@ -21,7 +21,7 @@ const PostSchema = new Schema({
       },
       category: String
     }, {
-    timestapms: true,
+    timestamps: true,
 });
 
 module.exports = PostSchema;

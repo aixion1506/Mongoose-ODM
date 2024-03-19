@@ -41,7 +41,11 @@ async function main() {
     console.log("---검색 결과---");
     console.log(searchedPosts);
     console.log("---------------");
-    return searchedPosts;
+    // return searchedPosts;
+
+    // 저자 게시
+    const authorPosts = await Post.find({}).populate('author'); 
+    return {searchedPosts, authorPosts};
 }
 async function cleanUp() {
     await mongoose.connection.dropDatabase();

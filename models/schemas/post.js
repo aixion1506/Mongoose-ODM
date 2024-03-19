@@ -1,6 +1,6 @@
-const { Schemas } = require('mogoose');
+const { Schema } = require('mongoose');
 
-const PostSchema = new Schemas({
+const PostSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -10,8 +10,9 @@ const PostSchema = new Schemas({
         required: true,
     },
     author: {
-        type: String,
+        type: Schema.Types.ObjectId,
         required: true,
+        ref: 'User',
       },
       likes: {
         type: Number,
